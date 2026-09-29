@@ -1,0 +1,7 @@
+Flask
+flask-cors
+gspread
+google-auth
+python-dotenv
+groq
+gunicorn
