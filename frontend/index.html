@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaveIQ - AI Savings Goal Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">💰 SaveIQ</div>
+        <div class="tagline">AI Savings Goal Tracker</div>
+    </header>
+
+    <main class="container">
+
+        <!-- Hero -->
+        <section class="hero">
+            <h1>Save Smarter. Achieve Faster.</h1>
+            <p>
+                Create savings goals, track your progress and get
+                AI-powered financial recommendations.
+            </p>
+        </section>
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+            <h2>Financial Dashboard</h2>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span>Total Goals</span>
+                    <strong id="totalGoals">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Total Saved</span>
+                    <strong id="totalSaved">₹0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Total Target</span>
+                    <strong id="totalTarget">₹0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Active Goals</span>
+                    <strong id="activeGoals">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Completed</span>
+                    <strong id="completedGoals">0</strong>
+                </div>
+
+                <div class="stat-card">
+                    <span>Overdue</span>
+                    <strong id="overdueGoals">0</strong>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Create Goal -->
+        <section class="card">
+
+            <h2>Create New Savings Goal</h2>
+
+            <form id="goalForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Goal Name</label>
+                        <input
+                            type="text"
+                            id="goalName"
+                            placeholder="Laptop"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Target Amount</label>
+                        <input
+                            type="number"
+                            id="targetAmount"
+                            placeholder="80000"
+                            min="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Initial Savings</label>
+                        <input
+                            type="number"
+                            id="initialSavings"
+                            placeholder="10000"
+                            min="0"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Deadline</label>
+                        <input
+                            type="date"
+                            id="deadline"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@gmail.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Purpose</label>
+                        <input
+                            type="text"
+                            id="purpose"
+                            placeholder="Education"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <button type="submit" class="primary-btn">
+                    + Create Savings Goal
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Goals -->
+        <section class="card">
+
+            <h2>My Savings Goals</h2>
+
+            <div id="goalsContainer">
+                <p class="empty-message">
+                    No savings goals yet.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>SaveIQ © 2026 | AI-powered savings management</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
