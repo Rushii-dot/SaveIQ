@@ -5,6 +5,7 @@ from google.oauth2.service_account import Credentials
 from datetime import datetime
 import uuid
 import os
+import json
 from dotenv import load_dotenv
 from groq import Groq
 load_dotenv()
@@ -30,11 +31,18 @@ SCOPES = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-credentials = Credentials.from_service_account_file(
-    "backend/google_credentials.json",
-    scopes=SCOPES
-)
+google_credentials = os.environ.get("GOOGLE_CREDENTIALS")
 
+if google_credentials:
+    credentials = Credentials.from_service_account_info(
+        json.loads(google_credentials),
+        scopes=SCOPES
+    )
+else:
+    credentials = Credentials.from_service_account_file(
+        "backend/google_credentials.json",
+        scopes=SCOPES
+    )
 client = gspread.authorize(credentials)
 
 spreadsheet = client.open_by_key(SPREADSHEET_ID)
