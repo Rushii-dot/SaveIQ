@@ -1,6 +1,6 @@
 const goals = [];
 
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "https://saveiq-backend.onrender.com";
 
 const goalForm = document.getElementById("goalForm");
 const goalsContainer = document.getElementById("goalsContainer");
@@ -575,9 +575,7 @@ async function getAIInsights(goalId) {
     try {
 
         const response =
-            await fetch(
-               `https://saveiq-backend.onrender.com`
-            );
+            await fetch("https://saveiq-backend.onrender.com/api/goals");
 
 
         const result =
