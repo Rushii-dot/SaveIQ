@@ -571,41 +571,33 @@ async function deleteGoal(goalId) {
 // ==========================================
 
 async function getAIInsights(goalId) {
-
     try {
+        const response = await fetch(
+            `https://saveiq-backend.onrender.com/api/goals/${goalId}/ai-insights`
+        );
 
-        const response =
-            await fetch("https://saveiq-backend.onrender.com/api/goals");
-
-
-        const result =
-            await response.json();
-
+        const result = await response.json();
 
         if (!response.ok || !result.success) {
-
             throw new Error(
-                result.message ||
-                "Unable to generate AI insights."
+                result.message || "Unable to generate AI insights."
             );
         }
-
 
         alert(
             "🤖 SaveIQ AI Insights\n\n" +
             result.insights
         );
 
-
     } catch (error) {
-
-        console.error(error);
+        console.error("AI Insights Error:", error);
 
         alert(
             "AI insights are currently unavailable.\n\n" +
             error.message
         );
     }
+}
 }
 
 
