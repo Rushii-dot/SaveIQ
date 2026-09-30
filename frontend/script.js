@@ -598,7 +598,7 @@ async function getAIInsights(goalId) {
         );
     }
 }
-}
+
 
 
 // ==========================================
